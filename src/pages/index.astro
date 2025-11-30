@@ -1,35 +1,38 @@
 ---
 const featuresBorrower = [
-  "Reach real people willing to lend, not just institutions.",
-  "Borrow in crypto or stablecoins, directly wallet to wallet.",
-  "Use your own wallets – including hardware wallets like Ledger or Trezor – to move funds.",
-  "Keep full control of your coins – Amicbridge never holds your funds or keys.",
+  "Reach real people willing to lend, not only institutions.",
+  "Borrow in crypto or stablecoins — directly wallet to wallet.",
+  "Use your own wallets — including hardware wallets like Ledger or Trezor.",
+  "Keep full control of your coins — Amicbridge never holds funds or keys.",
   "Explain your situation in your own words.",
   "Negotiate repayment terms and interest directly with lenders.",
-  "Whenever possible, we match you with manually verified lenders.",
+  "Whenever possible, we match you with manually verified lenders."
 ];
 
 const featuresLender = [
   "See real people and projects, not just numbers.",
-  "Lend using crypto or stablecoins – directly wallet to wallet.",
-  "Use your own wallets (exchange, software, or hardware wallets such as Ledger/Trezor).",
-  "Earn interest by lending directly to borrowers – you choose the rate (for example 3% or more, depending on risk).",
-  "You stay in control – Amicbridge never stores or holds your coins or private keys.",
+  "Lend using crypto or stablecoins — directly wallet to wallet.",
+  "Use any wallet you prefer (exchange, software, or hardware wallets).",
+  "Earn interest by lending directly to borrowers — you choose the rate.",
+  "You stay in control — Amicbridge never stores or holds your coins or private keys.",
   "Set your own interest rate and conditions.",
   "Chat with borrowers before you commit.",
-  "Apply for a Verified lender badge after a quick manual review.",
+  "Apply for a Verified lender badge after a quick manual review."
 ];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Amicbridge – Crypto & Stablecoin Lending</title>
+    <title>Amicbridge – Peer-to-Peer Crypto Lending</title>
+
     <meta
       name="description"
-      content="Amicbridge connects people who want to borrow crypto or stablecoins with people who want to lend – directly, wallet to wallet. You use your own wallets; Amicbridge never holds your funds."
+      content="Amicbridge connects crypto borrowers and lenders directly — wallet-to-wallet, fully non-custodial."
     />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <style>
       :root {
         color-scheme: dark;
@@ -41,260 +44,51 @@ const featuresLender = [
         --muted: #9ca3af;
         --border: #1f2933;
       }
+
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         background: radial-gradient(circle at top, #0f172a 0, #020617 55%);
         color: var(--text);
       }
+
       .shell {
         max-width: 1000px;
         margin: 0 auto;
         padding: 2.5rem 1.5rem 4rem;
       }
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-      }
-      .logo-mark {
-        width: 26px;
-        height: 26px;
-        border-radius: 999px;
-        background: radial-gradient(circle at 30% 20%, #4ade80, #16a34a);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.9rem;
-        color: #022c22;
-      }
-      nav a {
-        font-size: 0.9rem;
-        color: var(--muted);
-        text-decoration: none;
-        margin-left: 1.2rem;
-      }
-      nav a.button {
-        color: #022c22;
-        background: var(--accent);
-        padding: 0.45rem 0.95rem;
-        border-radius: 999px;
-        font-weight: 500;
-      }
-      .hero {
-        display: grid;
-        gap: 2rem;
-        margin-top: 1rem;
-      }
-      @media (min-width: 800px) {
-        .hero {
-          grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-          align-items: center;
-        }
-      }
+
       h1 {
         font-size: clamp(2.3rem, 3vw + 1.2rem, 3.1rem);
         line-height: 1.05;
         margin-bottom: 1rem;
       }
+
       h1 span {
         color: var(--accent);
       }
-      .hero-text {
-        font-size: 1rem;
-        color: var(--muted);
-        max-width: 32rem;
-        margin-bottom: 1.5rem;
-      }
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        margin-bottom: 1.2rem;
-      }
-      .btn {
-        border-radius: 999px;
-        padding: 0.6rem 1.4rem;
-        border: 1px solid transparent;
-        font-size: 0.98rem;
-        font-weight: 500;
-        cursor: pointer;
-        background: transparent;
-        color: var(--text);
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .btn-primary {
-        background: var(--accent);
-        color: #022c22;
-      }
-      .btn-outline {
-        border-color: var(--border);
-      }
-      .tiny-note {
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-      .card {
-        background: rgba(15, 23, 42, 0.84);
-        border-radius: 1.2rem;
-        padding: 1.4rem 1.5rem;
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-      }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.75rem;
-        padding: 0.2rem 0.7rem;
-        border-radius: 999px;
-        background: rgba(15, 118, 110, 0.18);
-        color: #6ee7b7;
-        margin-bottom: 0.7rem;
-      }
-      .pill-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        background: #4ade80;
-      }
-      .inline-label {
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--muted);
-        margin-bottom: 0.2rem;
-      }
-      .input-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.7rem;
-        margin-bottom: 0.7rem;
-      }
-      .fake-input {
-        padding: 0.65rem 0.8rem;
-        border-radius: 0.7rem;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        font-size: 0.84rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .fake-input span {
-        color: var(--muted);
-      }
 
-      /* calculator inputs */
-      .calc-field {
-        background: transparent;
-        border: none;
-        color: var(--text);
-        font-size: 0.9rem;
-        text-align: right;
-        width: 60%;
-      }
-      .calc-field::placeholder {
-        color: var(--muted);
-      }
-      .calc-field:focus {
-        outline: none;
-      }
-
-      .toggle-row {
-        display: flex;
-        gap: 0.6rem;
-        margin-top: 0.6rem;
-      }
-      .toggle-chip {
-        font-size: 0.76rem;
-        border-radius: 999px;
-        padding: 0.3rem 0.7rem;
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        color: var(--muted);
-      }
-      .toggle-chip.active {
-        border-color: var(--accent);
-        background: rgba(34, 197, 94, 0.1);
-        color: #bbf7d0;
-      }
-      .features {
-        display: grid;
-        gap: 1rem;
-        margin-top: 3rem;
-      }
-      @media (min-width: 800px) {
-        .features {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
       .feature-card {
         border-radius: 1rem;
         border: 1px solid rgba(148, 163, 184, 0.25);
         background: radial-gradient(circle at top left, #0f172a, #020617);
         padding: 1.2rem 1.3rem 1.1rem;
       }
+
       .feature-card h2 {
         font-size: 1.1rem;
         margin-bottom: 0.4rem;
       }
+
       .feature-card ul {
         padding-left: 1.1rem;
         margin: 0.3rem 0 0.5rem;
         font-size: 0.86rem;
         color: var(--muted);
       }
+
       .feature-card li + li {
         margin-top: 0.25rem;
-      }
-
-      /* shared form styles */
-      .borrow-form {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        margin-top: 0.8rem;
-      }
-      .borrow-row {
-        display: grid;
-        gap: 0.7rem;
-      }
-      @media (min-width: 700px) {
-        .borrow-row {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      .borrow-input,
-      .borrow-textarea {
-        width: 100%;
-        padding: 0.55rem 0.7rem;
-        border-radius: 0.55rem;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        background: rgba(15, 23, 42, 0.8);
-        color: var(--text);
-        font-size: 0.9rem;
-      }
-      .borrow-input::placeholder,
-      .borrow-textarea::placeholder {
-        color: var(--muted);
-      }
-      .borrow-textarea {
-        resize: vertical;
-      }
-      .borrow-submit {
-        margin-top: 0.3rem;
-        align-self: flex-start;
       }
 
       footer {
@@ -304,530 +98,40 @@ const featuresLender = [
         border-top: 1px solid rgba(30, 64, 175, 0.3);
         padding-top: 1rem;
       }
-      footer strong {
-        font-weight: 600;
-      }
     </style>
   </head>
 
   <body>
     <div class="shell">
-      <header>
-        <div class="logo">
-          <div class="logo-mark">A</div>
-          <span>Amicbridge</span>
+      <h1>
+        Borrow crypto. <span>Lend crypto.</span><br />
+        Wallet to wallet. No custodian.
+      </h1>
+
+      <section class="features" style="display:grid; gap:1rem; margin-top:3rem;">
+        <div class="feature-card">
+          <h2>For borrowers</h2>
+          <ul>
+            {featuresBorrower.map(f => <li>{f}</li>)}
+          </ul>
         </div>
-        <nav>
-          <a href="#how">How it works</a>
-          <a href="#invest">Investing</a>
-          <a href="#contact">Contact</a>
-          <a href="#safety">Safety</a>
-          <a class="button" href="#start">Get started</a>
-        </nav>
-      </header>
 
-      <main>
-        <section class="hero" id="start">
-          <div>
-            <h1>
-              Borrow in crypto. <span>Lend in crypto.</span><br />
-              Wallet to wallet.
-            </h1>
-            <p class="hero-text">
-              Amicbridge connects people who want to
-              <strong>borrow</strong> with people who want to
-              <strong>lend</strong> – using crypto and stablecoins only. All
-              transfers are wallet to wallet. You keep full control of your own
-              wallets and private keys; Amicbridge never holds your coins.
-              Interest (for example 3% or more per year) is agreed directly
-              between borrower and lender.
-            </p>
+        <div class="feature-card">
+          <h2>For lenders</h2>
+          <ul>
+            {featuresLender.map(f => <li>{f}</li>)}
+          </ul>
+        </div>
+      </section>
 
-            <div class="cta-row">
-              <a href="#borrow-form" class="btn btn-primary">
-                I want to borrow
-              </a>
-              <a href="#lend-form" class="btn btn-outline">
-                I want to lend / invest
-              </a>
-            </div>
-            <p class="tiny-note">
-              Accounts, messaging and full matching are coming soon. For now,
-              you can join the early access list.
-            </p>
-          </div>
-
-          <aside>
-            <div class="card" id="loan-calculator">
-              <div class="pill">
-                <span class="pill-dot"></span>
-                Live preview · Example crypto loan
-              </div>
-
-              <p class="inline-label">Borrower</p>
-
-              <div class="fake-input">
-                <span>Amount (e.g. USDT)</span>
-                <input
-                  id="calc-amount"
-                  class="calc-field"
-                  type="number"
-                  min="0"
-                  placeholder="2000"
-                />
-              </div>
-
-              <div class="input-row">
-                <div class="fake-input">
-                  <span>Duration (months)</span>
-                  <input
-                    id="calc-duration"
-                    class="calc-field"
-                    type="number"
-                    min="1"
-                    placeholder="6"
-                  />
-                </div>
-                <div class="fake-input">
-                  <span>Interest rate (%)</span>
-                  <input
-                    id="calc-rate"
-                    class="calc-field"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    placeholder="3.0"
-                  />
-                </div>
-              </div>
-
-              <p class="inline-label">Lender / Investor</p>
-              <div class="fake-input">
-                <span>Offer</span>
-                <span id="calc-offer" style="font-weight: 500;">
-                  2,000 · 3.0% APR
-                </span>
-              </div>
-
-              <p class="tiny-note" style="margin-top: 0.8rem;">
-                Estimated monthly payment:
-                <strong id="calc-monthly">0</strong><br />
-                Total to repay:
-                <strong id="calc-total">0</strong>
-              </p>
-
-              <div class="toggle-row">
-                <span class="toggle-chip active">Personal loan</span>
-                <span class="toggle-chip">Small business</span>
-              </div>
-
-              <p class="tiny-note" style="margin-top: 0.8rem;">
-                Example only. This calculator is for illustration and does not
-                represent a real offer or guaranteed return.
-              </p>
-            </div>
-          </aside>
-        </section>
-
-        <section class="features" id="how">
-          <div class="feature-card">
-            <h2>For borrowers</h2>
-            <ul>
-              {featuresBorrower.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h2>For lenders & investors</h2>
-            <ul>
-              {featuresLender.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-        </section>
-
-        <!-- Investing section -->
-        <section id="invest" class="features" style="margin-top: 2rem;">
-          <div class="feature-card">
-            <h2>Invest by lending crypto</h2>
-            <p class="tiny-note">
-              On Amicbridge, investing means lending your crypto or stablecoins
-              directly to real people or small projects. You decide who to lend
-              to and at what interest rate – for example 3% per year or more,
-              depending on the risk you are willing to take.
-            </p>
-            <ul>
-              <li>
-                You choose the loan amount, interest rate (e.g. 3–10% per year),
-                and typical duration.
-              </li>
-              <li>
-                All transfers are wallet to wallet in crypto or stablecoins
-                (e.g. BTC, ETH, USDT, USDC).
-              </li>
-              <li>
-                You always control your own wallets – Amicbridge never has
-                access to your keys or balances.
-              </li>
-              <li>
-                You receive repayments directly from the borrower according to
-                your agreement with them.
-              </li>
-              <li>
-                All returns and risks are between you and the borrower. There is
-                no guaranteed return and loans can lose money if the borrower
-                does not repay.
-              </li>
-              <li>
-                Amicbridge simply helps you find potential borrowers and make
-                contact.
-              </li>
-            </ul>
-            <p class="tiny-note" style="margin-top:0.6rem;">
-              <strong>Important:</strong> This is not a savings account or
-              investment fund. You are personally acting as a private crypto
-              lender / investor, and every loan is your own decision.
-            </p>
-          </div>
-        </section>
-
-        <!-- Borrow form – Netlify form "borrow" -->
-        <section id="borrow-form" class="features" style="margin-top: 3rem;">
-          <div class="feature-card">
-            <h2>Borrow crypto or stablecoins</h2>
-            <p class="tiny-note">
-              Fill in your details and we’ll receive your request. All transfers
-              are wallet to wallet in crypto or stablecoins. Amicbridge never
-              stores or holds your coins.
-            </p>
-
-            <form
-              name="borrow"
-              method="POST"
-              data-netlify="true"
-              class="borrow-form"
-            >
-              <input type="hidden" name="form-name" value="borrow" />
-
-              <div class="borrow-row">
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-                <input
-                  class="borrow-input"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-
-              <div class="borrow-row">
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="phone"
-                  placeholder="Phone number"
-                  required
-                />
-                <input
-                  class="borrow-input"
-                  type="number"
-                  name="amount"
-                  placeholder="Amount you want to borrow (value in USDT, USDC, etc.)"
-                  required
-                />
-              </div>
-
-              <div class="borrow-row">
-                <select
-                  class="borrow-input"
-                  name="asset_type"
-                  required
-                >
-                  <option value="">
-                    What do you want to borrow?
-                  </option>
-                  <option value="crypto">Crypto (e.g. BTC, ETH, SOL)</option>
-                  <option value="stablecoin">Stablecoin (e.g. USDT, USDC)</option>
-                </select>
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="wallet_address"
-                  placeholder="Your main wallet address (e.g. Ethereum / BTC)"
-                />
-              </div>
-
-              <textarea
-                class="borrow-textarea"
-                name="reason"
-                placeholder="Tell a bit about why you need this loan and how you plan to repay."
-                rows="4"
-                required
-              ></textarea>
-
-              <!-- Identity verification checkbox -->
-              <label
-                style="font-size:0.85rem; color:var(--muted); display:flex; gap:0.4rem; align-items:center;"
-              >
-                <input type="checkbox" name="id_verification" />
-                I agree to verify my identity to the other party if needed.
-              </label>
-
-              <button type="submit" class="btn btn-primary borrow-submit">
-                Send request
-              </button>
-
-              <p class="tiny-note" style="margin-top:0.6rem;">
-                What happens next:
-                <br />1) We receive your request by email.
-                <br />2) We review it and look for a matching crypto lender / investor.
-                <br />3) If we find a match, we contact you with the next steps.
-              </p>
-            </form>
-          </div>
-        </section>
-
-        <!-- Lend form – Netlify form "lend" -->
-        <section id="lend-form" class="features" style="margin-top: 3rem;">
-          <div class="feature-card">
-            <h2>Lend & invest crypto</h2>
-            <p class="tiny-note">
-              Tell us how much you want to lend, in which assets (crypto or
-              stablecoins), and on what terms. You can set interest from 3% per
-              year or higher, depending on the risk and type of borrower you
-              want to support. All transfers are wallet to wallet. Amicbridge
-              never stores coins or keys for you. Verified lenders may receive a
-              special badge in our communication.
-            </p>
-
-            <form
-              name="lend"
-              method="POST"
-              data-netlify="true"
-              class="borrow-form"
-            >
-              <input type="hidden" name="form-name" value="lend" />
-
-              <div class="borrow-row">
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-                <input
-                  class="borrow-input"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-
-              <div class="borrow-row">
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="phone"
-                  placeholder="Phone number"
-                  required
-                />
-                <input
-                  class="borrow-input"
-                  type="number"
-                  name="amount"
-                  placeholder="Amount you want to lend (value in USDT, USDC, etc.)"
-                  required
-                />
-              </div>
-
-              <div class="borrow-row">
-                <select
-                  class="borrow-input"
-                  name="asset_type"
-                  required
-                >
-                  <option value="">
-                    What do you want to lend?
-                  </option>
-                  <option value="crypto">Crypto (e.g. BTC, ETH, SOL)</option>
-                  <option value="stablecoin">Stablecoin (e.g. USDT, USDC)</option>
-                  <option value="both">Both crypto and stablecoins</option>
-                </select>
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="wallet_preference"
-                  placeholder="Network / wallet preference (e.g. ETH mainnet, Ledger, MetaMask)"
-                />
-              </div>
-
-              <div class="borrow-row">
-                <input
-                  class="borrow-input"
-                  type="number"
-                  step="0.1"
-                  name="interest"
-                  placeholder="Desired interest rate (%) – e.g. 3, 5, 8"
-                />
-                <input
-                  class="borrow-input"
-                  type="text"
-                  name="duration"
-                  placeholder="Typical duration (e.g. 3–12 months)"
-                />
-              </div>
-
-              <textarea
-                class="borrow-textarea"
-                name="notes"
-                placeholder="Anything else we should know about your lending / investing preferences."
-                rows="4"
-              ></textarea>
-
-              <!-- Identity verification checkbox -->
-              <label
-                style="font-size:0.85rem; color:var(--muted); display:flex; gap:0.4rem; align-items:center;"
-              >
-                <input type="checkbox" name="id_verification" />
-                I agree to verify my identity to the other party if needed.
-              </label>
-
-              <button type="submit" class="btn btn-primary borrow-submit">
-                Send lending offer
-              </button>
-
-              <p class="tiny-note" style="margin-top:0.6rem;">
-                What happens next:
-                <br />1) We receive your lending / investing offer.
-                <br />2) We may contact you to verify some details.
-                <br />3) When we find a suitable borrower, we reach out to both of you.
-              </p>
-            </form>
-          </div>
-        </section>
-
-        <!-- Verification info -->
-        <section id="verification" class="features" style="margin-top: 2rem;">
-          <div class="feature-card">
-            <h2>How lender verification works</h2>
-            <p class="tiny-note">
-              To give borrowers extra confidence, we may manually verify lenders
-              before connecting them.
-            </p>
-            <ul>
-              <li>We review the information you send in the lend form.</li>
-              <li>
-                We may contact you for simple checks, like ID or company
-                details.
-              </li>
-              <li>
-                Verified lenders can be marked with a “Verified lender” note in
-                our communication.
-              </li>
-              <li>
-                Verification helps build trust but does not guarantee repayments
-                or remove your own responsibility to check each loan.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="features" style="margin-top:2rem;">
-          <div class="feature-card">
-            <h2>FAQ</h2>
-            <p class="tiny-note"><strong>Are you a bank or exchange?</strong><br />
-              No. Amicbridge is only a connection platform for crypto and stablecoin lending.
-              We never hold or store your coins, and we do not run an exchange or wallet service.
-            </p>
-            <p class="tiny-note"><strong>Which assets can I use?</strong><br />
-              Crypto and stablecoins such as BTC, ETH, USDT, USDC and similar. All transfers are
-              wallet to wallet between you and the other person.
-            </p>
-            <p class="tiny-note"><strong>Do you guarantee repayments or interest?</strong><br />
-              No. Every loan is an agreement directly between borrower and lender.
-              There is no guaranteed return and you can lose money if a borrower does not repay.
-            </p>
-            <p class="tiny-note"><strong>Can I use a hardware wallet?</strong><br />
-              Yes. You always use your own wallets (software or hardware like Ledger/Trezor) to send
-              and receive crypto directly with the other person.
-            </p>
-            <p class="tiny-note"><strong>Should I ever share my seed phrase?</strong><br />
-              Never. No one from Amicbridge or any lender/borrower should ask for your seed phrase
-              or private keys. Only sign transactions on your own devices and apps.
-            </p>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="features" style="margin-top: 2rem;">
-          <div class="feature-card">
-            <h2>Contact</h2>
-            <p><strong>CEO:</strong> Robert</p>
-            <p><strong>Address:</strong> Oslo, Norway</p>
-            <p><strong>Phone:</strong> 929 28 373</p>
-            <p>
-              <strong>Email:</strong>
-              <a href="mailto:robertamicolsen@gmail.com" style="color:var(--accent);">
-                robertamicolsen@gmail.com
-              </a>
-            </p>
-          </div>
-        </section>
-
-        <footer id="safety">
-          <p>
-            <strong>Important:</strong> Amicbridge is a connection platform.
-            We do not provide loans, hold coins, store balances, or guarantee repayments or returns.
-            All lending and investing decisions are your own. You are responsible for any transfers
-            you make on-chain. Always do your own checks and consult a professional if needed before
-            lending or borrowing, even when dealing with verified lenders. Never share your wallet
-            seed phrase or private keys with anyone.
-          </p>
-        </footer>
-      </main>
+      <footer>
+        <p>
+          <strong>Important:</strong> Amicbridge is a connection platform.
+          We never hold funds, private keys, or custody. All payments and agreements
+          happen directly between wallets. Always verify who you are dealing with
+          before sending any crypto.
+        </p>
+      </footer>
     </div>
-
-    <!-- Calculator script -->
-    <script>
-      const amountInput = document.getElementById("calc-amount");
-      const durationInput = document.getElementById("calc-duration");
-      const rateInput = document.getElementById("calc-rate");
-      const offerSpan = document.getElementById("calc-offer");
-      const monthlySpan = document.getElementById("calc-monthly");
-      const totalSpan = document.getElementById("calc-total");
-
-      function updateCalc() {
-        const amount = parseFloat(amountInput.value || "2000");
-        const months = parseFloat(durationInput.value || "6");
-        const rate = parseFloat(rateInput.value || "3.0");
-
-        if (!amount || !months || !rate) {
-          offerSpan.textContent = "2,000 · 3.0% APR";
-          monthlySpan.textContent = "0";
-          totalSpan.textContent = "0";
-          return;
-        }
-
-        const total = amount * (rate / 100 * (months / 12) + 1);
-        const monthly = total / months;
-
-        offerSpan.textContent = `${amount.toFixed(0)} · ${rate.toFixed(1)}% APR`;
-        monthlySpan.textContent = `${monthly.toFixed(0)}`;
-        totalSpan.textContent = `${total.toFixed(0)}`;
-      }
-
-      [amountInput, durationInput, rateInput].forEach((el) => {
-        el.addEventListener("input", updateCalc);
-      });
-
-      updateCalc();
-    </script>
   </body>
 </html>
