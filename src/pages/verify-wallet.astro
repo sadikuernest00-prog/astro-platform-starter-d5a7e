@@ -7,23 +7,18 @@ import VerifyWallet from "../components/VerifyWallet";
     <meta charset="utf-8" />
     <title>Verify Wallet – Amicbridge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- (styles from earlier snippet) -->
   </head>
-  <body>
-    <div class="shell">
-      <header>
-        <!-- logo + nav -->
-      </header>
 
-      <main>
-        <h1>Verify your wallet</h1>
-        <p class="intro">
-          Prove that you control your wallet by signing a short message. This helps build trust between
-          borrowers and lenders. We never see your private keys and verification does not cost gas.
-        </p>
+  <body style="margin:0; font-family: system-ui; background:#020617; color:white;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+      <h1 style="font-size:2rem; margin-bottom:1rem;">Wallet Verification</h1>
+      <p style="color:#9ca3af; margin-bottom:2rem; max-width:600px;">
+        Verify your crypto wallet to build trust on Amicbridge.  
+        You’ll sign a harmless message that proves you control the address.  
+        No gas fees. No transactions. No seed phrase.
+      </p>
 
-        <VerifyWallet client:load />
-      </main>
+      <VerifyWallet client:load />
     </div>
   </body>
 </html>
