@@ -1,0 +1,29 @@
+---
+import VerifyWallet from "../components/VerifyWallet";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Verify Wallet – Amicbridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- (styles from earlier snippet) -->
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <!-- logo + nav -->
+      </header>
+
+      <main>
+        <h1>Verify your wallet</h1>
+        <p class="intro">
+          Prove that you control your wallet by signing a short message. This helps build trust between
+          borrowers and lenders. We never see your private keys and verification does not cost gas.
+        </p>
+
+        <VerifyWallet client:load />
+      </main>
+    </div>
+  </body>
+</html>
