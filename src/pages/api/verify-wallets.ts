@@ -1,6 +1,11 @@
+
 import type { APIRoute } from "astro";
 import { verifyMessage } from "ethers";
 
+/**
+ * POST /api/verify-wallets
+ * Body: { walletAddress: string, message: string, signature: string }
+ */
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
@@ -8,7 +13,9 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (!walletAddress || !message || !signature) {
       return new Response(
-        JSON.stringify({ error: "walletAddress, message and signature are required." }),
+        JSON.stringify({
+          error: "walletAddress, message and signature are required.",
+        }),
         { status: 400 }
       );
     }
@@ -18,7 +25,10 @@ export const POST: APIRoute = async ({ request }) => {
       recovered = verifyMessage(message, signature);
     } catch (err) {
       console.error("Signature verification error:", err);
-      return new Response(JSON.stringify({ error: "Invalid signature." }), { status: 400 });
+      return new Response(
+        JSON.stringify({ error: "Invalid signature." }),
+        { status: 400 }
+      );
     }
 
     if (recovered.toLowerCase() !== String(walletAddress).toLowerCase()) {
@@ -36,8 +46,9 @@ export const POST: APIRoute = async ({ request }) => {
     });
   } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ error: "Internal server error." }), {
-      status: 500,
-    });
+    return new Response(
+      JSON.stringify({ error: "Internal server error." }),
+      { status: 500 }
+    );
   }
 };
