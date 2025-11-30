@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { BrowserProvider } from "ethers";
 
@@ -121,7 +122,7 @@ const VerifyWallet: React.FC = () => {
           }}
         >
           Your wallet has been verified and can now show the{" "}
-          <strong>Verified Wallet</strong> badge on your profile and listings.
+          <strong>Verified Wallet</strong> badge on your profile.
         </p>
       )}
 
@@ -136,17 +137,6 @@ const VerifyWallet: React.FC = () => {
           Error: {error}
         </p>
       )}
-
-      <p
-        style={{
-          marginTop: "1.2rem",
-          fontSize: "0.78rem",
-          color: "#6b7280",
-        }}
-      >
-        Security note: Amicbridge will never ask for your seed phrase or private
-        keys. If anyone asks for those, they are trying to steal your funds.
-      </p>
     </div>
   );
 };
